@@ -1,6 +1,6 @@
-# Lab 03 – Developing a Tiny Transformer Language Model
+# Lab 03 - Developing a Tiny Transformer Language Model
 
-**Laboratory session:** Lab 3 – Developing a Tiny Transformer Language Model
+Lab 3 - Developing a Tiny Transformer Language Model
 **Notebook:** [`notebooks/tiny_transformer_lab3_v2_bpe.ipynb`](notebooks/tiny_transformer_lab3_v2_bpe.ipynb)
 
 ## Objective
@@ -183,19 +183,19 @@ The final cell launches a web interface where you can enter a story prompt and a
 - Switching from character-level tokens (v1) to BPE (v2) and training on more data made the biggest difference to story quality.
 - Train and validation loss stayed close, so the model was not overfitting at this size and data volume.
 - In the experiments, the 4-layer models beat the 2-layer model, and cutting training from 6 to 3 epochs hurt far more than changing the number of heads.
-- Sampling settings change the output a lot: low temperature gives repetitive but safe stories, high temperature gives more creative but less coherent ones.
+- Sampling settings change the output a lot, low temperature gives repetitive but safe stories, high temperature gives more creative but less coherent ones.
 - *Challenges:* My first version used character-level tokens and produced poor stories, so I had to switch to a BPE tokenizer. Training also had to fit within Colab's GPU time, which limited how many experiments I could run.
 
 ## Learning Outcomes
 
-- I learned how a decoder-only Transformer works: token and positional embeddings, masked self-attention, feed-forward layers, residual connections and LayerNorm.
+- I learned how a decoder-only Transformer works, including token and positional embeddings, masked self-attention, feed-forward layers, residual connections and LayerNorm.
 - I understood how a language model is trained to predict the next token, and how validation loss and perplexity measure it.
 - I saw how much the tokenizer matters, since switching from characters to BPE improved the stories a lot.
 - From the experiments, I learned that more layers and enough training epochs matter more than the number of attention heads.
 - I learned how temperature, top-k and top-p change the generated text.
 
-## Acknowledgements
+## Sources
 
 - [TinyStories](https://huggingface.co/datasets/roneneldan/TinyStories) by Ronen Eldan and Yuanzhi Li
 - Hugging Face `datasets` and `tokenizers`
-- Coursework: PUSL 3205, Lab 3
+
