@@ -1,6 +1,6 @@
-# LLM Practical Portfolio – PUSL3205
+# LLM Practical Portfolio - PUSL3205
 
-Practical portfolio (P1) for **PUSL3205 Large Language Models and Generative AI**.
+Practical portfolio (P1) for PUSL3205 (Large Language Models and Generative AI)
 
 | | |
 |---|---|
