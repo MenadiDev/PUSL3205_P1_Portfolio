@@ -1,7 +1,7 @@
 # Lab 03 - Developing a Tiny Transformer Language Model
 
-Lab 3 - Developing a Tiny Transformer Language Model
-**Notebook:** [`notebooks/tiny_transformer_lab3_v2_bpe.ipynb`](notebooks/tiny_transformer_lab3_v2_bpe.ipynb)
+
+**Notebook -** [`notebooks/tiny_transformer_lab3_v2_bpe.ipynb`](notebooks/tiny_transformer_lab3_v2_bpe.ipynb)
 
 ## Objective
 
