@@ -1,6 +1,6 @@
-# Lab 05 – RAG Architecture (University Knowledge Assistant)
+# Lab 05 - RAG Architecture (University Knowledge Assistant)
 
-**Laboratory session:** Lab 5 – Retrieval-Augmented Generation (RAG) architecture
+**Laboratory session -** Retrieval-Augmented Generation (RAG) architecture
 
 ## Objective
 
@@ -83,8 +83,8 @@ python rag_pipeline.py     # terminal version
 
 | Question | Translated query | Result |
 |---|---|---|
-| Sinhala: how long is the computer science degree? | "When will the festival of the Buddha's birth be celebrated?" ❌ mistranslated | The "DURATION – 4 Years" chunk was still retrieved as result 2 |
-| Tamil: how long is the computer science degree? | "How long is a computer science degree?" ✅ | Computer Science programme page retrieved first |
+| Sinhala: how long is the computer science degree? | "When will the festival of the Buddha's birth be celebrated?"  mistranslated | The "DURATION – 4 Years" chunk was still retrieved as result 2 |
+| Tamil: how long is the computer science degree? | "How long is a computer science degree?"  | Computer Science programme page retrieved first |
 
 ![Sinhala hybrid retrieval](screenshots/03_sinhala_hybrid_retrieval.png)
 ![Tamil hybrid retrieval](screenshots/04_tamil_hybrid_retrieval.png)
@@ -93,16 +93,16 @@ python rag_pipeline.py     # terminal version
 
 - Uploading the same PDF more than once filled the original collection with duplicate chunks, so the same text came back several times in the top-4 results and crowded out other relevant chunks. Content-based IDs and a new `university_docs_clean` collection fixed this.
 - The embedding model returns vectors for Sinhala and Tamil, but because the handbook is in English, translating the question to English first is a more dependable way to retrieve the right chunks.
-- A plain translation prompt was not enough: the translation prompt had to be given the context (a question about a university degree, "how long" means length of study) to stop it from being translated as something unrelated, such as a timer or countdown.
+- A plain translation prompt was not enough, the translation prompt had to be given the context (a question about a university degree, "how long" means length of study) to stop it from being translated as something unrelated, such as a timer or countdown.
 - Hybrid retrieval with RRF combines the direct and translated searches, so a chunk that ranks well in both moves to the top.
-- The Sinhala test showed why hybrid retrieval matters: Llama 3.2 translated the question completely wrongly (as a question about a Buddhist festival), but because the original question was searched too, the chunk with the degree duration was still in the top results. The Tamil question was translated correctly.
+- The Sinhala test showed why hybrid retrieval matters. Llama 3.2 translated the question completely wrongly, but because the original question was searched too, the chunk with the degree duration was still in the top results. The Tamil question was translated correctly.
 - The app correctly said the cafeteria menu was not in the documents instead of making up an answer.
 - *Challenges:* Uploading the same PDF several times filled the database with duplicate chunks, so I had to rebuild it with unique IDs. Translating Sinhala questions was also tricky, because without context the model translated some questions into the wrong meaning.
 
 ## Learning Outcomes
 
-- I learned the full RAG pipeline: loading PDFs, chunking, embeddings, storing vectors in ChromaDB, retrieval and a grounded prompt.
+- I learned the full RAG pipeline including loading PDFs, chunking, embeddings, storing vectors in ChromaDB, retrieval and a grounded prompt.
 - I understood how chunk size and overlap affect what gets retrieved.
-- I saw that telling the model to answer only from the context reduces made-up answers.
+- I saw that telling the model to answer only from the context reduces made up answers.
 - I learned that duplicate chunks can push out useful results, and fixed it with content-based IDs.
 - I learned how to handle Sinhala and Tamil questions by translating them first and combining searches with Reciprocal Rank Fusion.
