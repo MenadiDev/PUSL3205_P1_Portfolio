@@ -1,14 +1,14 @@
-# Lab 01 – Sentiment Analysis Using Traditional Machine Learning
+# Lab 01 - Sentiment Analysis Using Traditional Machine Learning
 
-**Laboratory session:** Lab 1 – Sentiment analysis using traditional machine learning
+
 **Notebook:** [`notebooks/Lab1_Sentiment_Analysis.ipynb`](notebooks/Lab1_Sentiment_Analysis.ipynb) (run on Google Colab, outputs saved)
 
 ## Objective
 
-Practise basic NLP tasks: preprocess text, represent it as Bag-of-Words, and train and evaluate traditional machine-learning models that classify sentences as positive or negative.
+Practise basic NLP tasks. preprocess text, represent it as Bag-of-Words, and train and evaluate traditional machine-learning models that classify sentences as positive or negative.
 
-**Dataset:** [UCI Sentiment Labelled Sentences](https://archive.ics.uci.edu/dataset/331/sentiment%2Blabelled%2Bsentences): 3,000 reviews from Amazon, IMDb and Yelp (1,500 positive, 1,500 negative)
-**Libraries:** pandas, NLTK, scikit-learn, Matplotlib, Seaborn
+**Dataset -** [UCI Sentiment Labelled Sentences](https://archive.ics.uci.edu/dataset/331/sentiment%2Blabelled%2Bsentences): 3,000 reviews from Amazon, IMDb and Yelp (1,500 positive, 1,500 negative)
+**Libraries -** pandas, NLTK, scikit-learn, Matplotlib, Seaborn
 
 ## Tasks and Implementation
 
