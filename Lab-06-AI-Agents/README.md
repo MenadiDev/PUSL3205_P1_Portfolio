@@ -107,7 +107,7 @@ The n8n workflow (Part E) can be imported from [`n8n/workflow.json`](n8n/workflo
 ## Observations
 
 - The agent picked the correct tool for every request in Part A, and the tool results were correct.
-- The model's final reply was not always as reliable as the tool. The date tool returned 22 November 2026, but the agent called it Monday when it was actually Sunday. It also called the OS "Windows 10" and said the new file was in the current folder, when it was saved in `created_files/`.
+- The model's final reply was not always as reliable as the tool. The date tool returned 22 November 2026, but the agent called it Monday when it was actually Sunday.
 - Long-term memory worked. After restarting the program, the agent still knew my name from the SQLite database. When I first told it my name, though, it went off-topic and explained the meaning of the name Alex.
 - The RAG tool gave the same kind of grounded answer as the Lab 5 app, listing the year 1 modules straight from the handbook.
 - In n8n, the agent said the calendar event was created for the time I asked, but the Create node used the current time instead, because its Start and End fields were set to `$now`. The agent also gave a "confirmation code" that Google Calendar doesn't produce. This showed me that tool outputs need to be checked rather than trusting the agent's reply.
