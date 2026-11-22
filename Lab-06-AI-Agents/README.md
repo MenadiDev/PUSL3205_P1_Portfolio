@@ -1,6 +1,5 @@
-# Lab 06 – Building a Tool-Using AI Agent with Ollama
+# Lab 06 - Building a Tool-Using AI Agent with Ollama
 
-**Laboratory session:** Lab 6 – Building a tool-using AI agent with Ollama
 
 ## Objective
 
@@ -54,7 +53,7 @@ A no-code version of the agent built in n8n (running locally on `localhost:5678`
 
 **Tests**
 
-*Create:* "Create a calendar event titled "n8n Agent Test" on November 18, 2026, from 2:00 PM to 2:30 PM…" The agent called the Create tool and the event was created (17.5 s, ~982 tokens).
+*Create:* "Create a calendar event titled "n8n Agent Test" on November 18, 2026, from 2:00 PM to 2:30 PM…" The agent called the Create tool and the event was created.
 
 ![Create event test](screenshots/n8n/06_create_event_test.png)
 
@@ -80,12 +79,12 @@ python memory_agent.py
 
 | Query | Tool called | Result |
 |---|---|---|
-| calculate 20*4 | `calculator_tool` | 80 ✅ |
-| What is the day today? | `get_datetime` | Tool returned 2026-11-22, but the agent said "Monday" (it was a Sunday) ⚠️ |
-| Open Notepad and write Hello Students | `open_notepad` | Notepad opened with the text ✅ |
-| Find all PDF files in ..\documents | `search_files` | Found the handbook PDF ✅ |
-| Create a file called test.txt with Hello World | `create_text_file` | File created in `created_files/` ✅ |
-| Show my computer specifications | `get_system_info` | OS, processor and RAM reported ✅ |
+| calculate 20*4 | `calculator_tool` | 80  |
+| What is the day today? | `get_datetime` | Tool returned 2026-11-22, but the agent said "Monday" (it was a Sunday)  |
+| Open Notepad and write Hello Students | `open_notepad` | Notepad opened with the text  |
+| Find all PDF files in ..\documents | `search_files` | Found the handbook PDF  |
+| Create a file called test.txt with Hello World | `create_text_file` | File created in `created_files/`  |
+| Show my computer specifications | `get_system_info` | OS, processor and RAM reported  |
 
 ![Calculator agent tools](screenshots/01_calculator_agent_tools.png)
 ![File and system tools](screenshots/02_calculator_agent_files_system.png)
@@ -96,9 +95,9 @@ python memory_agent.py
 
 | Query | Result |
 |---|---|
-| "My name is alex", then exit and run again: "What is my name?" | "Your name is Alex." – remembered across runs ✅ |
-| What modules are in year 1? | Listed the 12 year-1 modules from the handbook ✅ |
-| What's on my calendar today? | "No events scheduled for today" ✅ |
+| "My name is alex", then exit and run again: "What is my name?" | "Your name is Alex." – remembered across runs  |
+| What modules are in year 1? | Listed the 12 year-1 modules from the handbook  |
+| What's on my calendar today? | "No events scheduled for today"  |
 
 ![Memory across runs](screenshots/05_memory_across_runs.png)
 ![Memory, RAG and calendar](screenshots/06_memory_rag_calendar.png)
@@ -108,15 +107,15 @@ The n8n workflow (Part E) can be imported from [`n8n/workflow.json`](n8n/workflo
 ## Observations
 
 - The agent picked the correct tool for every request in Part A, and the tool results were correct.
-- The model's final reply was not always as reliable as the tool: the date tool returned 22 November 2026, but the agent called it Monday when it was actually Sunday. It also called the OS "Windows 10" and said the new file was in the current folder, when it was saved in `created_files/`.
-- Long-term memory worked: after restarting the program, the agent still knew my name from the SQLite database. When I first told it my name, though, it went off-topic and explained the meaning of the name Alex.
-- The RAG tool gave the same kind of grounded answer as the Lab 5 app, listing the year-1 modules straight from the handbook.
+- The model's final reply was not always as reliable as the tool. The date tool returned 22 November 2026, but the agent called it Monday when it was actually Sunday. It also called the OS "Windows 10" and said the new file was in the current folder, when it was saved in `created_files/`.
+- Long-term memory worked. After restarting the program, the agent still knew my name from the SQLite database. When I first told it my name, though, it went off-topic and explained the meaning of the name Alex.
+- The RAG tool gave the same kind of grounded answer as the Lab 5 app, listing the year 1 modules straight from the handbook.
 - In n8n, the agent said the calendar event was created for the time I asked, but the Create node used the current time instead, because its Start and End fields were set to `$now`. The agent also gave a "confirmation code" that Google Calendar doesn't produce. This showed me that tool outputs need to be checked rather than trusting the agent's reply.
 - *Challenges:* Setting up the Google Calendar connection (OAuth credentials) for both the Python agent and n8n, and working out why the n8n event was created at the wrong time.
 
 ## Learning Outcomes
 
-- I learned how tool calling works: the LLM decides which tool to use, the tool runs, and the result goes back to the model.
+- I learned how tool calling works, the LLM decides which tool to use, the tool runs, and the result goes back to the model.
 - I understood why a calculator tool should evaluate expressions safely instead of using `eval()`.
 - I learned the difference between short-term conversation memory and long-term memory stored in a database.
 - I saw how an agent can combine RAG with actions like creating calendar events.
