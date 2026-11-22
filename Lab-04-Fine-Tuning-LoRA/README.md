@@ -1,6 +1,6 @@
 # Lab 04 - Fine-Tuning an LLM using LoRA / QLoRA
 
-Lab 4 - Fine-tuning an LLM using LoRA/QLoRA
+
 **Notebook:** [`notebooks/LoRA_QLoRA_Finetuning_Lab.ipynb`](notebooks/LoRA_QLoRA_Finetuning_Lab.ipynb) (run on Google Colab, outputs saved)
 
 ## Objective
