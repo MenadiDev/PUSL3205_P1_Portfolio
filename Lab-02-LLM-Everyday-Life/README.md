@@ -1,8 +1,10 @@
-# Lab 02 – AI in Everyday Challenges
+# Lab 02  - AI in Everyday Challenges
 
-**Laboratory session:** Lab 2 – AI in everyday challenges (group activity)
+**Laboratory session -** AI in everyday challenges (group activity)
+
 **Group:** Group 4 – *The Dehydrated Student* (groups were assigned by the lecturer during the session)
-**Product:** **Sipwise** – drink water on your class schedule, not when you're already thirsty
+
+**Product:** **Sipwise** - drink water on your class schedule, not when you're already thirsty
 
 ## Objective
 
