@@ -53,4 +53,9 @@ PUSL3205_LLM_Practical_Portfolio/
 
 ## Version history
 
-Labs 3 and 5 were first developed in their own repositories ([Tiny-transformer-tinystories](https://github.com/MenadiDev/Tiny-transformer-tinystories) and [University-Knowledge-RAG](https://github.com/MenadiDev/University-Knowledge-RAG)) and were merged into this portfolio with their full commit history, so the original development dates are kept.
+Labs 3 and 5 were first developed in their own repositories, and their full commit history is kept there.
+
+- Lab 3: [Tiny-transformer-tinystories](https://github.com/MenadiDev/Tiny-transformer-tinystories)
+- Lab 5: [University-Knowledge-RAG](https://github.com/MenadiDev/University-Knowledge-RAG)
+
+The final versions were then copied into this portfolio and documented, so this repository's commit history covers the portfolio's assembly, not the original development.
