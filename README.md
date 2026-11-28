@@ -26,7 +26,7 @@ Each lab has its own folder with a `README.md` covering: laboratory session, obj
 ## Repository structure
 
 ```
-PUSL3205_LLM_Practical_Portfolio/
+PUSL3205_P1_Portfolio/
 ├── README.md
 ├── Lab-01-Sentiment-Analysis-ML/
 ├── Lab-02-LLM-Everyday-Life/
